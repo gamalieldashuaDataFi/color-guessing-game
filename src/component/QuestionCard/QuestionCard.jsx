@@ -21,31 +21,35 @@ export const QuestionCard = ({
   const getSpinClass = useSpinClass(isSpinning, score);
 
   return (
-    <div
-      style={{
-        width: '80%',
-        margin: 'auto',
-        background: '#D9FCD1',
-        transform: 'scale(.9)',
-      }}
-    >
+    <div className="position-relative main-wrapper m-3">
+      {' '}
       <Message message={message} />
-      <Instruction instruction="Guess the correct color!" />
-      <ColorBox shuffle={shuffle} randAnswer={randAnswer} />
-      <Score score={score} />
-      <ColorOptions
-        randRgbs={randRgbs}
-        onclickHandler={onclickHandler}
-        randAnswer={randAnswer}
-        selectedColor={selectedColor}
-        message={message}
-      />
-      <NewGameButton
-        newGameOnclickHandler={newGameOnclickHandler}
-        getSpinClass={getSpinClass}
-        selectedColor={selectedColor}
-        randAnswer={randAnswer}
-      />
+      <div
+        className="position-relative rounded"
+        style={{
+          maxWidth: '768px',
+          margin: 'auto',
+          background: '#D9FCD1',
+        }}
+      >
+        <Instruction instruction="Guess the correct color!" />
+        <ColorBox shuffle={shuffle} randAnswer={randAnswer} />
+        <Score score={score} />
+        <ColorOptions
+          randRgbs={randRgbs}
+          onclickHandler={onclickHandler}
+          randAnswer={randAnswer}
+          selectedColor={selectedColor}
+          message={message}
+          className="glow-button"
+        />
+        <NewGameButton
+          newGameOnclickHandler={newGameOnclickHandler}
+          getSpinClass={getSpinClass}
+          selectedColor={selectedColor}
+          randAnswer={randAnswer}
+        />
+      </div>
     </div>
   );
 };

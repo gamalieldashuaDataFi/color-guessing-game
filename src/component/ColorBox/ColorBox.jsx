@@ -1,10 +1,9 @@
 import React from 'react';
 
 export const ColorBox = ({ randAnswer, shuffle }) => {
-  // Function to convert rgb to rgba with opacity
   const convertRgbToRgba = (rgb, opacity) => {
     if (!rgb) {
-      return 'rgba(0, 0, 0, 0)'; // Fallback to transparent if rgb is undefined
+      return 'rgba(0, 0, 0, 0)';
     }
     const rgbValues = rgb.match(/\d+/g);
     if (rgbValues) {
@@ -21,16 +20,18 @@ export const ColorBox = ({ randAnswer, shuffle }) => {
       data-testid="colorBox"
       style={{
         width: '73.804971319311663479923518164436%',
-        height: '8.125rem',
+        height: '7.125em',
         background: backgroundColorWithOpacity,
-        margin: '3.0125rem auto 3.3125rem',
+        margin: '2.0125em auto 2.3125em',
         display: 'flex',
         alignItems: 'center',
       }}
-      className="px-2"
     >
-      <span className="badge text-dark">{`${shuffle}. `}</span>
-      <h2 className="badge" style={{ background: 'black', margin: 'auto' }}>
+      <h2
+        className="p-1"
+        style={{ background: 'black', margin: 'auto', fontSize: '.8em' }}
+      >
+        <span>{`${shuffle}. `}</span>
         {randAnswer}
       </h2>
     </div>

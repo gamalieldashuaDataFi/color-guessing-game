@@ -13,31 +13,21 @@ export const ColorOption = ({
   randAnswer,
   selectedColor,
   showIcons,
-  ...restOfProps // Receive the visibility state
+  ...restOfProps
 }) => {
   return (
     <Button
       {...restOfProps}
       onClick={onclickHandler}
-      variant="primary"
+      variant="outline-light"
       style={{
         width,
         height,
         background: handlerParams?.background,
         margin,
         color,
-        fontWeight: '800',
       }}
     >
-      {showIcons && selectedColor && (
-        <>
-          {randAnswer === handlerParams?.background ? (
-            <span>✔</span>
-          ) : (
-            handlerParams?.background === selectedColor && <span>❌</span>
-          )}
-        </>
-      )}
       {children}
       {btnText || ''}
     </Button>

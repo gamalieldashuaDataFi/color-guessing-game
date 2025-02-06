@@ -7,13 +7,11 @@ const NewGameButton = ({
   selectedColor,
   randAnswer,
 }) => (
-  <div style={{ padding: '2rem' }}>
+  <div className="p-3">
     <ColorOption
       onclickHandler={() => newGameOnclickHandler()}
       handlerParams={{ background: '#D9D9D9' }}
-      height={'3.625rem'}
-      width={'40.166347992351816443594646271511%'}
-      margin={'2.5625rem auto 0'}
+      height={'3.625em'}
       color="black"
       btnText=" New Game"
       selectedColor={selectedColor}
