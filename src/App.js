@@ -74,7 +74,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header p-4">
+      <header className="App-header">
         <QuestionCard
           shuffle={shuffle}
           randAnswer={randAnswer}
