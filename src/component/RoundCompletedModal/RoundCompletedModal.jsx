@@ -5,10 +5,10 @@ const RoundCompleteModal = ({ show, onHide, onNewGame, score }) => {
   return (
     <Modal show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
-        <Modal.Title>Round Completed</Modal.Title>
+        <Modal.Title>Round Completed!</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>Congratulations! You have completed the round.</p>
+        <p>Congratulations! </p>
         <p className="text-danger bold">
           <span className="bold">Total: </span>
           {score + '/20 points'}

@@ -14,6 +14,7 @@ function App() {
   const [selectedColor, setSelectedColor] = useState('');
   const [showIcons, setShowIcons] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   const getRandomRgbColor = () => {
     const r = Math.floor(Math.random() * 256);
@@ -43,6 +44,10 @@ function App() {
   }, [randRgbs, shuffle]);
 
   const onclickHandler = selectedColor => {
+    if (isFinished) {
+      setMessage('Game Over!');
+      setTimeout(() => {}, 600);
+    }
     setSelectedColor(selectedColor);
     setShowIcons(true);
 
@@ -57,6 +62,7 @@ function App() {
       setShowIcons(false);
       setMessage('');
       if (shuffle === 20) {
+        setIsFinished(true);
         setShowModal(true);
       } else {
         setShuffle(prev => ++prev);

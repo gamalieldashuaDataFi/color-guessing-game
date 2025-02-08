@@ -2,7 +2,8 @@ import React from 'react';
 
 const Message = ({ message }) => {
   const isSuccess = message === 'Correct!';
-  const emoji = isSuccess ? '🎉' : '❌';
+  let emoji = isSuccess ? '🎉' : '❌';
+  if (message.toLowerCase().includes('over')) emoji = '⚠';
 
   return (
     <div
